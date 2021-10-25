@@ -2,11 +2,10 @@ import styles from '../styles/studyToUkraine.module.css'
 import YouTube from 'react-youtube';
 
 function StudyToUkraine (props) {
-    const {titreStudyInUkraine} = props.study
-    console.log(titreStudyInUkraine)
+    const {titreStudyInUkraine,sousTitreStudyInUkraine,buttonStudyInUkraine} = props.study
     const opts = {
-        height: '390',
-        width: '640',
+        height: '380',
+        width: '600',
         playerVars: {
             autoplay: 1,
         }
@@ -19,7 +18,8 @@ function StudyToUkraine (props) {
             <YouTube videoId="2g811Eo7K8U" opts={opts} onReady={_onReady} />
             <div>
                 <h1>{titreStudyInUkraine}</h1>
-                <p>gerrerg eghre</p>
+                <h4>{sousTitreStudyInUkraine}</h4>
+                <button className={styles.btnDefault}>{buttonStudyInUkraine}</button>
             </div>
         </div>
     )

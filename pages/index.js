@@ -1,12 +1,14 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import StudyToUkraine from '../src/studyToUkraine'
+import Inscription from '../src/inscription'
 import isObjectNull from "../isObjectNull";
 import client from "../client";
 
 export default function Home(props) {
   const {
-      studyToUkraineProps
+      studyToUkraineProps,
+      inscriptionProps
   }  = props;
   return (
     <div className={styles.container}>
@@ -16,19 +18,26 @@ export default function Home(props) {
         <link rel="icon" href="/logo.png" />
       </Head>
       <StudyToUkraine study={studyToUkraineProps}/>
+      <Inscription inscription={inscriptionProps}/>
     </div>
   )
 }
 
 export async function getServerSideProps(context){
-    var data_home = await client.fetch("*[_id=='home'][0]{titreStudyInUkraine,titreAdmission}");
+    var data_home = await client.fetch("*[_id=='home'][0]{titreStudyInUkraine,sousTitreStudyInUkraine,buttonStudyInUkraine," +
+        "titreAdmission}");
     const studyToUkraineProps = {
         titreStudyInUkraine:isObjectNull(data_home.titreStudyInUkraine),
+        sousTitreStudyInUkraine:isObjectNull(data_home.sousTitreStudyInUkraine),
+        buttonStudyInUkraine:isObjectNull(data_home.buttonStudyInUkraine),
+    }
+    const inscriptionProps = {
         titreAdmission:isObjectNull(data_home.titreAdmission),
     }
     return {
       props: {
         studyToUkraineProps,
+        inscriptionProps
       },
     }
 }

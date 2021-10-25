@@ -1,7 +1,41 @@
 .container{
-    width: 80vw;
+    width: 100vw;
     display: flex;
     flex-direction: row;
+    padding: 1.5rem 10vw;
+    align-items: center;
     justify-content: space-between;
     text-align: right;
+    background-color: #009cff;
+}
+.btnDefault{
+    border: black solid 1px;
+    border-radius: 5px;
+    padding: 10px 30px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btnDefault:hover{
+    border: #e3e3e3 solid 1px;
+    background-color: #0f3e5f;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 30px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btnDefault:active{
+    border: #e3e3e3 solid 1px;
+    background-color: #05304e;
+    color: white;
+    border-radius: 5px;
+    padding: 12px 32px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
 }
