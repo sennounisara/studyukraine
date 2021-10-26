@@ -25,7 +25,8 @@ export default function Home(props) {
 
 export async function getServerSideProps(context){
     var data_home = await client.fetch("*[_id=='home'][0]{titreStudyInUkraine,sousTitreStudyInUkraine,buttonStudyInUkraine," +
-        "titreAdmission,listAdmission}");
+        "titreAdmission,listAdmission,imageComingUkraine,titleComingUkraine,descriptionComingUkraine,buttonComingUkraine" +
+        "}");
     const studyToUkraineProps = {
         titreStudyInUkraine:isObjectNull(data_home.titreStudyInUkraine),
         sousTitreStudyInUkraine:isObjectNull(data_home.sousTitreStudyInUkraine),
@@ -33,7 +34,11 @@ export async function getServerSideProps(context){
     }
     const inscriptionProps = {
         titreAdmission:isObjectNull(data_home.titreAdmission),
-        listAdmission:isObjectNull(data_home.listAdmission)
+        listAdmission:isObjectNull(data_home.listAdmission),
+        imageComingUkraine:isObjectNull(data_home.imageComingUkraine),
+        titleComingUkraine:isObjectNull(data_home.titleComingUkraine),
+        descriptionComingUkraine:isObjectNull(data_home.descriptionComingUkraine),
+        buttonComingUkraine:isObjectNull(data_home.buttonComingUkraine)
     }
     return {
       props: {

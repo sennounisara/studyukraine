@@ -1,24 +1,34 @@
 import styles from '../styles/inscription.module.css'
 import Link from 'next/link'
 import {useState} from 'react'
-import isObjectNull from "../isObjectNull";
+import urlForImage from "../urlForImage";
 function Inscription(props){
     const [admissionIndex,setAdmissionIndex] = useState(0);
-    const {titreAdmission,listAdmission} = props.inscription;
-    console.log(listAdmission)
+    const {titreAdmission,listAdmission,imageComingUkraine,titleComingUkraine,descriptionComingUkraine,buttonComingUkraine} = props.inscription;
+    console.log(titleComingUkraine)
     return <div className={styles.container}>
-        {
-            listAdmission?.map((item,index)=>{
-                const {methodName,methodDescription,_key} = item;
-                const url= "/"+ methodName.toString()
-                return <Link href={url} >
-                    <div className={styles.bloc}>
-                        <h1>{methodName}</h1>
-                        <h4>{methodDescription}</h4>
-                    </div>
-                </Link>
-            })
-        }
+        <h2 className={styles.title}>{titreAdmission}</h2>
+        <div className={styles.bloc_01}>
+            {
+                listAdmission?.map((item,index)=>{
+                    const {methodName,methodDescription,_key} = item;
+                    const url= "/"+ methodName.toString()
+                    return <Link href={url} >
+                        <div className={styles.bloc}>
+                            <h1>{methodName}</h1>
+                            <h4>{methodDescription}</h4>
+                        </div>
+                    </Link>
+                })
+            }
+        </div>
+        <div className={styles.bloc_01}>
+            <div>
+                <h1>{titleComingUkraine}</h1>
+                <h4>{descriptionComingUkraine}</h4>
+            </div>
+            <img className={styles.image} src={urlForImage(imageComingUkraine).url()} />
+        </div>
     </div>
 }
 export default Inscription

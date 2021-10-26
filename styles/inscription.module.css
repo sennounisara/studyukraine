@@ -1,6 +1,15 @@
 .container{
     width: 100vw;
     display: flex;
+    flex-direction: column;
+    padding: 1.5rem 10vw;
+    align-items: center;
+    justify-content: space-between;
+    text-align: right;
+}
+.bloc_01{
+    width: 100vw;
+    display: flex;
     flex-direction: row;
     padding: 1.5rem 10vw;
     align-items: center;
@@ -19,11 +28,18 @@
     cursor: pointer;
 }
 .bloc:hover{
-    background-color: #88aac1;
+    background-color: #0f3e5f;
+    color: #e3e3e3;
 }
 .bloc:active{
     height: 21vh;
     width: 16vw;
-    background-color: #313539;
+    background-color: #05304e;
     color: #e3e3e3;
+}
+.title{
+    color: red;
+}
+.image{
+    width: 30vw;
 }
