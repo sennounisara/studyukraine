@@ -24,8 +24,10 @@ function Inscription(props){
         </div>
         <div className={styles.bloc_01}>
             <div>
+                <img className={styles.image_01} src="/undraw_certification.svg" />
                 <h1>{titleComingUkraine}</h1>
                 <h4>{descriptionComingUkraine}</h4>
+                <button>{buttonComingUkraine}</button>
             </div>
             <img className={styles.image} src={urlForImage(imageComingUkraine).url()} />
         </div>
