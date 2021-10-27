@@ -5,7 +5,7 @@ import urlForImage from "../urlForImage";
 function Inscription(props){
     const [admissionIndex,setAdmissionIndex] = useState(0);
     const {titreAdmission,listAdmission,imageComingUkraine,titleComingUkraine,descriptionComingUkraine,buttonComingUkraine} = props.inscription;
-    console.log(titleComingUkraine)
+
     return <div className={styles.container}>
         <h2 className={styles.title}>{titreAdmission}</h2>
         <div className={styles.bloc_01}>
