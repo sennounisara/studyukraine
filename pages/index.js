@@ -5,12 +5,14 @@ import Inscription from '../src/inscription'
 import isObjectNull from "../isObjectNull";
 import client from "../client";
 import RaisonStudyToUkraine from "../src/raisonStudyToUkraine";
+import FavoriteStudy from "../src/favoriteStudy";
 
 export default function Home(props) {
   const {
       studyToUkraineProps,
       inscriptionProps,
-      raisonStudyToUkraine
+      raisonStudyToUkraine,
+      favoriteStudyProps
   }  = props;
   return (
     <div className={styles.container}>
@@ -22,6 +24,7 @@ export default function Home(props) {
       <StudyToUkraine study={studyToUkraineProps}/>
       <Inscription inscription={inscriptionProps}/>
       <RaisonStudyToUkraine raisonToStudy={raisonStudyToUkraine}/>
+      <FavoriteStudy favorite={favoriteStudyProps}/>
     </div>
   )
 }
@@ -29,7 +32,8 @@ export default function Home(props) {
 export async function getServerSideProps(context){
     var data_home = await client.fetch("*[_id=='home'][0]{titreStudyInUkraine,sousTitreStudyInUkraine,buttonStudyInUkraine," +
         "titreAdmission,listAdmission,imageComingUkraine,titleComingUkraine,descriptionComingUkraine,buttonComingUkraine," +
-        "sousTitleStudyToUkraine,titleStudyToUkraine,buttonStudyToUkraine,listStudyUkraine}");
+        "sousTitleStudyToUkraine,titleStudyToUkraine,buttonStudyToUkraine,listStudyUkraine," +
+        "titleFavoriteStudyProgram,descriptionFavoriteStudyProgram,imageFavoriteStudyProgram,buttonFavoriteStudyProgram,listDirectory}");
     const studyToUkraineProps = {
         titreStudyInUkraine:isObjectNull(data_home.titreStudyInUkraine),
         sousTitreStudyInUkraine:isObjectNull(data_home.sousTitreStudyInUkraine),
@@ -49,11 +53,19 @@ export async function getServerSideProps(context){
         buttonStudyToUkraine:isObjectNull(data_home.buttonStudyToUkraine),
         listStudyUkraine:isObjectNull(data_home.listStudyUkraine),
     }
+    const favoriteStudyProps = {
+        titleFavoriteStudyProgram:isObjectNull(data_home.titleFavoriteStudyProgram),
+        descriptionFavoriteStudyProgram:isObjectNull(data_home.descriptionFavoriteStudyProgram),
+        imageFavoriteStudyProgram:isObjectNull(data_home.imageFavoriteStudyProgram),
+        buttonFavoriteStudyProgram:isObjectNull(data_home.buttonFavoriteStudyProgram),
+        listDirectory:isObjectNull(data_home.listDirectory),
+    }
     return {
       props: {
         studyToUkraineProps,
         inscriptionProps,
-        raisonStudyToUkraine
+        raisonStudyToUkraine,
+        favoriteStudyProps
       },
     }
 }

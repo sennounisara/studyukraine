@@ -1,0 +1,21 @@
+.container {
+    width: 100vw;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 1.5rem 10vw;
+    align-items: center;
+    justify-content: space-between;
+    text-align: right;
+}
+.image{
+    width: 35vw;
+}
+.bloc{
+    border-radius: 5px;
+    border: black 1px solid;
+    width: 35vw;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #05304e;
+    color: #e3e3e3;
+}
