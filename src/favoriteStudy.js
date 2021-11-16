@@ -4,7 +4,8 @@ import {useState} from 'react'
 import urlForImage from "../urlForImage";
 import YouTube from "react-youtube";
 function FavoriteStudy(props){
-    const {titleFavoriteStudyProgram,descriptionFavoriteStudyProgram,imageFavoriteStudyProgram,buttonFavoriteStudyProgram,listDirectory} = props.favorite;
+    const {titleFavoriteStudyProgram,descriptionFavoriteStudyProgram,imageFavoriteStudyProgram,
+        buttonFavoriteStudyProgram,listDirectory} = props.favorite;
     const opts = {
         height: '380',
         width: '600',

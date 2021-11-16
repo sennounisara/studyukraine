@@ -1,0 +1,18 @@
+.container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 10vw;
+    align-items: normal;
+    justify-content: space-between;
+    text-align: right;
+}
+.imageBloc {
+    width: 25vw;
+    height: 25vh;
+}
+.bloc {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
