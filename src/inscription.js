@@ -3,7 +3,6 @@ import Link from 'next/link'
 import {useState} from 'react'
 import urlForImage from "../urlForImage";
 function Inscription(props){
-    const [admissionIndex,setAdmissionIndex] = useState(0);
     const {titreAdmission,listAdmission,imageComingUkraine,titleComingUkraine,descriptionComingUkraine,buttonComingUkraine} = props.inscription;
 
     return <div className={styles.container}>
@@ -11,12 +10,12 @@ function Inscription(props){
         <div className={styles.bloc_01}>
             {
                 listAdmission?.map((item,index)=>{
-                    const {methodName,methodDescription,_key} = item;
-                    const url= "/"+ methodName.toString()
+                    const {admissionId,admissionName,admissionDescription,_key} = item;
+                    const url= "/"+ admissionId.toString()
                     return <Link href={url} >
                         <div className={styles.bloc}>
-                            <h1>{methodName}</h1>
-                            <h4>{methodDescription}</h4>
+                            <h1>{admissionName}</h1>
+                            <h4>{admissionDescription}</h4>
                         </div>
                     </Link>
                 })
