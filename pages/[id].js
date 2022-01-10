@@ -28,11 +28,18 @@ export default function Admission(props){
 
 export async function getServerSideProps(context) {
     const { id } = context.query;
-    const data_howToRegister = await client.fetch("*[_type=='howToRegister'][0]{titlePage}");
+    const data_howToRegister = await client.fetch("*[_type=='howToRegister'][0]{titlePage,imagePage,idVideoYoutube,listHowToRegister,sousTitreHowToRegister,sousTitre_01,title_01,titreHowToRegister}");
+
     const howToRegisterProps = {
-        url:isObjectNull(data_howToRegister.url),
         titlePage:isObjectNull(data_howToRegister.titlePage),
-    }
+        imagePage:isObjectNull(data_howToRegister.imagePage),
+        idVideoYoutube:isObjectNull(data_howToRegister.idVideoYoutube),
+        listHowToRegister:isObjectNull(data_howToRegister.listHowToRegister),
+        sousTitreHowToRegister:isObjectNull(data_howToRegister.sousTitreHowToRegister),
+        sousTitre_01:isObjectNull(data_howToRegister.sousTitre_01),
+        title_01:isObjectNull(data_howToRegister.title_01),
+        titreHowToRegister:isObjectNull(data_howToRegister.titreHowToRegister),
+}
     return {
         props: {
             howToRegisterProps,
