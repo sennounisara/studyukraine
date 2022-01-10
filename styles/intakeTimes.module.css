@@ -1,0 +1,25 @@
+.container{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 10vw;
+    align-items: center;
+    justify-content: space-between;
+    text-align: right;
+    background-color: #009cff;
+}
+.image{
+    width: 400px;
+}
+.block_01{
+    display: flex;
+    flex-direction: row;
+    padding: 1.5rem 10vw;
+    justify-content: space-between;
+    text-align: right;
+}
+.detail{
+    background-color: #eaeaea;
+    padding:  10px;
+    margin: 10px 0 10px 10px;
+}
