@@ -1,0 +1,13 @@
+.container{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    padding: 1.5rem 10vw;
+}
+.bloc_title {
+    background-color: #009cff;
+    width: 100vw;
+    padding: 1.5rem 10vw;
+    text-align: center;
+}
